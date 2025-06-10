@@ -1,11 +1,13 @@
 // Variables
 let mobile_media_query = window.matchMedia("(max-width: 400px)");
-let tablet_media_query = window.matchMedia("(min-width: 400px) and (max-width: 600px)");
+let tablet_media_query = window.matchMedia(
+  "(min-width: 400px) and (max-width: 600px)"
+);
 const notes = document.querySelectorAll(".js-note");
 
 // -> Function that resets the size of the notes.
 function resize_notes() {
-  notes.forEach(note => {
+  notes.forEach((note) => {
     if (note.classList.contains("active")) {
       note.classList.remove("active");
       gsap.set(note, {
@@ -81,9 +83,18 @@ function set_up_paper() {
     zIndex: 200,
     clipPath:
       "polygon(" +
-      arr[0] + "%" + arr[1] + "%," +
-      arr[2] + "%" + arr[3] + "%," +
-      arr[4] + "%" + arr[5] + "%)",
+      arr[0] +
+      "%" +
+      arr[1] +
+      "%," +
+      arr[2] +
+      "%" +
+      arr[3] +
+      "%," +
+      arr[4] +
+      "%" +
+      arr[5] +
+      "%)",
     onComplete: notes_ready
   });
 }
@@ -95,7 +106,9 @@ function envelop_transition() {
     duration: 0.25,
     onComplete: set_up_paper
   });
-  document.querySelector(".js-up-paper").removeEventListener("click", envelop_transition);
+  document
+    .querySelector(".js-up-paper")
+    .removeEventListener("click", envelop_transition);
   document.querySelector(".js-up-paper").classList.remove("cursor");
 }
 
@@ -104,7 +117,9 @@ function sticker() {
   gsap.set(".js-sticker", { width: "20%", left: "-80%" });
   document.body.classList.remove("scissors");
   document.querySelector(".js-sticker").removeEventListener("click", sticker);
-  document.querySelector(".js-up-paper").addEventListener("click", envelop_transition);
+  document
+    .querySelector(".js-up-paper")
+    .addEventListener("click", envelop_transition);
   document.querySelector(".js-up-paper").classList.add("cursor");
 }
 
