@@ -1,205 +1,159 @@
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
-html,
+/* Set the colour and the position of the background and the elements */
 body {
-  height: 100%;
-}
-
-body {
-  width: 100%;
-  background-color: #000;
-  font-size: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-@media (max-height: 500px) {
-  body {
-    margin: 25% 0 25% 0;
-  }
+  height: 100vh;
+  background-color: #fae1dd;
 }
 
-.envelop {
-  width: 15rem;
-  height: 10rem;
-  position: absolute;
-  left: 0;
-  right: 0;
-  margin: auto;
-}
-@media (min-width: 400px) and (max-width: 600px) {
-  .envelop {
-    width: 20rem;
-    height: 15rem;
-  }
-}
-@media (min-width: 600px) {
-  .envelop {
-    width: 25rem;
-    height: 20rem;
-  }
-}
-@media (min-width: 600px) and (min-height: 600px) {
-  .envelop {
-    bottom: 20%;
-  }
-}
-.envelop__front-paper {
-  width: 100%;
-  height: 100%;
-  bottom: 0;
-  left: 0;
-  position: absolute;
-  border-radius: 0.7rem;
-  border: 0.35rem solid #5c6e96;
-  background-color: #31506e;
-  clip-path: polygon(100% 0%, 50% 70%, 0% 0%, 0% 100%, 100% 100%);
-  z-index: 300;
-}
-.envelop__back-paper {
-  width: 100%;
-  height: 100%;
-  bottom: 0;
-  left: 0;
-  position: absolute;
-  border-radius: 0.7rem;
-  background-color: #c0d1e2;
-  clip-path: polygon(0% 0%, 100% 0%, 90% 100%, 0% 90%);
-  z-index: 100;
-}
-.envelop__up-paper {
-  width: 100%;
-  height: 100%;
-  bottom: 0;
-  left: 0;
+.container {
   position: relative;
-  border-radius: 0.7rem;
-  background-color: #5e74a4;
-  z-index: 400;
-  clip-path: polygon(0% 0%, 100% 0%, 50% 81%);
 }
-.envelop__sticker {
-  width: 100%;
-  height: 20%;
-  position: absolute;
-  margin: auto;
-  top: 30%;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  z-index: 400;
-  background-image: url("https://www.freepnglogos.com/uploads/heart-png/emoji-heart-33.png");
-  background-color: #f9f9f9;
-  border: 0.3rem solid #e2e2e2;
-  background-size: 2rem;
-  background-position: center;
-}
-@media (max-width: 400px) {
-  .envelop__sticker {
-    background-size: 1.2rem;
-  }
-}
-@media (min-width: 600px) {
-  .envelop__sticker {
-    height: 15%;
-  }
-}
-.envelop__false-sticker {
-  width: 20%;
-  height: 20%;
-  position: absolute;
-  margin: auto;
-  top: 30%;
-  left: 80%;
-  bottom: 0;
-  right: 0;
-  z-index: 300;
-  background-image: url("https://www.freepnglogos.com/uploads/heart-png/emoji-heart-33.png");
-  background-color: #f9f9f9;
-  border: 0.3rem solid #e2e2e2;
-  background-size: 2rem;
-  background-position: center;
-}
-@media (max-width: 400px) {
-  .envelop__false-sticker {
-    background-size: 1.2rem;
-  }
-}
-@media (min-width: 600px) {
-  .envelop__false-sticker {
-    height: 15%;
-  }
-}
-.envelop__content {
-  width: 100%;
-  height: 100%;
-  bottom: 0;
-  left: 0;
-  position: absolute;
-  z-index: 200;
-}
-
-.love-notes {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.note {
-  width: 95%;
-  height: 30%;
-  background-color: #f9f9f9;
-  position: absolute;
-  overflow: hidden;
-  transition: height 0.5s, opacity 0.25s;
-  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
-}
-.note:nth-child(1) {
-  bottom: 60%;
-}
-.note:nth-child(2) {
-  bottom: 40%;
-}
-.note:nth-child(3) {
-  bottom: 20%;
-}
-.note:hover {
+.valentines {
+  position: relative;
+  top: 50px;
   cursor: pointer;
-  height: 45%;
+  animation: up 3s linear infinite;
 }
-.note__text {
-  font-family: "Sofia";
-  padding: 1rem;
+
+/* Style the envelope and the card */
+.envelope {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  background-color: #adeaf8;
 }
-.note__text p {
-  font-size: 0.9rem;
-  margin-bottom: 1rem;
+
+.envelope:before {
+  background-color: #9bd4ef;
+  content: "";
+  position: absolute;
+  width: 212px;
+  height: 212px;
+  transform: rotate(45deg);
+  top: -105px;
+  left: 44px;
+  border-radius: 30px 0 0 0;
+}
+
+.card {
+  position: absolute;
+  background-color: #eae2b7;
+  width: 270px;
+  height: 170px;
+  top: 5px;
+  left: 15px;
+  box-shadow: -5px -5px 100px rgba(0, 0, 0, 0.4);
+}
+
+.card:before {
+  content: "";
+  position: absolute;
+  border: 3px solid #003049;
+  border-style: dotted;
+  width: 240px;
+  height: 140px;
+  left: 12px;
+  top: 12px;
+}
+
+.text {
+  position: absolute;
+  font-family:  'Brush Script MT', cursive;
+  font-size: 28px;
   text-align: center;
+  line-height: 25px;
+  top: 19px;
+  left: 85px;
+  color: #003049;
 }
-@media (min-width: 300px) and (max-width: 600px) {
-  .note__text p {
-    font-size: 1.025rem;
+
+.heart {
+  background-color: #d62828;
+  display: inline-block;
+  height: 30px;
+  margin: 0 10px;
+  position: relative;
+  top: 110px;
+  left: 105px;
+  transform: rotate(-45deg);
+  width: 30px;
+}
+
+.heart:before,
+.heart:after {
+  content: "";
+  background-color: #d62828;
+  border-radius: 50%;
+  height: 30px;
+  position: absolute;
+  width: 30px;
+}
+
+.heart:before {
+  top: -15px;
+  left: 0;
+}
+
+.heart:after {
+  left: 15px;
+  top: 0;
+}
+.front {
+  position: absolute;
+  border-right: 180px solid #8ed0f4;
+  border-top: 95px solid transparent;
+  border-bottom: 100px solid transparent;
+  left: 120px;
+  top: 5px;
+  width: 0;
+  height: 0;
+  z-index: 10;
+}
+
+.front:before {
+  position: absolute;
+  content: "";
+  border-left: 300px solid #9de1f8;
+  border-top: 195px solid transparent;
+  left: -120px;
+  top: -95px;
+  width: 0;
+  height: 0;
+}
+
+/* Add the shadow */
+.shadow {
+  position: absolute;
+  width: 330px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.3);
+  bottom: 250px;
+  left: 650px;
+  animation: scale 3s linear infinite;
+  z-index: -1;
+}
+
+/* To move the envelope up and down */
+@keyframes up {
+  0%,
+  100% {
+    transform: translateY(0);
   }
-}
-@media (min-width: 600px) {
-  .note__text p {
-    font-size: 1.15rem;
+  50% {
+    transform: translateY(-30px);
   }
 }
 
-.scissors {
-  cursor: url("https://i.postimg.cc/GtLCdKxR/sisors.png"), pointer;
-}
-.scissors:active {
-  cursor: url("https://i.postimg.cc/GtXQ7WPZ/pngwing-com.png"), pointer;
-}
-
-.cursor {
-  cursor: pointer;
+/* to scale the shadow */
+@keyframes scale {
+  0%,
+  100% {
+    transform: scaleX(1);
+  }
+  50% {
+    transform: scaleX(0.85);
+  }
 }
